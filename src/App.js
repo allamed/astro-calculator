@@ -13,7 +13,7 @@ function App() {
       <BrowserRouter>
         <Routes>
 
-          <Route index element={<Result />} />
+          <Route index element={<Landing />} />
           <Route path="calculator" element={<Calculator />} />
             <Route path="result" element={<Result />} />
           <Route path="*" element={<Error />} />

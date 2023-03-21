@@ -99,7 +99,7 @@ function Calculator() {
         link:link
 
     };
-    const promise = axios.post("https://astroseek-api.onrender.com/astroseek-calculator",dataLink )
+    const promise = axios.post(/*"https://astroseek-api.onrender.com/astroseek-calculator"*/ "/api",dataLink )
 
 // Handle the pending, fulfilled, and rejected cases
     promise.then((response) => {

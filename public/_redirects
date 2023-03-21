@@ -1,0 +1,2 @@
+/api/* https://astroseek-api.onrender.com/astroseek-calculator/:splat 200
+/*  /index.html  200
