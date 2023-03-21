@@ -2,6 +2,7 @@ import main from "../assets/images/moon.svg";
 import styled from "styled-components";
 //import { Logo } from "../components";
 import { Link } from "react-router-dom";
+import "../index.css";
 const Landing = () => {
   return (
     <Wrapper>
@@ -28,7 +29,7 @@ const Landing = () => {
     </Wrapper>
   );
 };
-const Wrapper = styled.main`
+export const Wrapper = styled.main`
   nav {
     width: var(--fluid-width);
     max-width: var(--max-width);
