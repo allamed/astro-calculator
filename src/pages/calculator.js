@@ -117,7 +117,7 @@ function Calculator() {
 
     };
     const promise = axios.post("https://astroseek-api.onrender.com/astroseek-calculator"/*"/api"*/ ,dataLink )
-
+        setIsLoading(true);
 // Handle the pending, fulfilled, and rejected cases
     promise.then((response) => {
         setIsLoading(false);
@@ -136,7 +136,7 @@ function Calculator() {
         toast.error("il y a eu une erreur du serveur");
         console.error('POST request failed:', error);
     }).finally(() => {
-        //setIsLoading(true);
+        setIsLoading(false);
     });
 
 console.log("moon : "+ moonTitle);
@@ -144,7 +144,53 @@ console.log("moon : "+ moonTitle);
     };
 
     if (isLoading) {
-        return <Loading />;
+        return (
+    <main>
+        <MDBContainer fluid style={{width:"70%" ,marginTop:"6%"}}>
+
+
+                <Loading />
+
+
+        </MDBContainer >
+        <MDBFooter className='bg-dark text-center text-white' style={{marginTop:"5%"}}>
+            <MDBContainer className='p-4 pb-0'>
+                <section className='mb-4'>
+                    <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
+                        <MDBIcon fab icon='facebook-f' />
+                    </MDBBtn>
+
+                    <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
+                        <MDBIcon fab icon='twitter' />
+                    </MDBBtn>
+
+                    <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
+                        <MDBIcon fab icon='google' />
+                    </MDBBtn>
+                    <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
+                        <MDBIcon fab icon='instagram' />
+                    </MDBBtn>
+
+                    <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
+                        <MDBIcon fab icon='linkedin-in' />
+                    </MDBBtn>
+
+                    <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
+                        <MDBIcon fab icon='github' />
+                    </MDBBtn>
+                </section>
+            </MDBContainer>
+
+            <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
+                © 2023 Copyright:
+                <a className='text-white' href='https://mdbootstrap.com/'>
+                    LuneNoire
+                </a>
+            </div>
+        </MDBFooter>
+    </main>);
+
+
     }
     if (!resultReady) return (
 

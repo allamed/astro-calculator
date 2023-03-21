@@ -64,7 +64,7 @@ const Result = ({moonTitle, moonContent, houseTitle, houseContent, houseImg, moo
                     </MDBCardText>
                 </MDBCardBody>
                 <MDBCardFooter>
-                    <small className='text-muted'>Last updated 3 mins ago</small>
+                    <small className='text-muted'>{moonTitle.slice(8)}</small>
                 </MDBCardFooter>
             </MDBCard>
 
@@ -87,7 +87,7 @@ const Result = ({moonTitle, moonContent, houseTitle, houseContent, houseImg, moo
                     </MDBCardText>
                 </MDBCardBody>
                 <MDBCardFooter>
-                    <small className='text-muted'>Last updated 3 mins ago</small>
+                    <small className='text-muted'>{houseTitle.slice(8)}</small>
                 </MDBCardFooter>
             </MDBCard>
 
