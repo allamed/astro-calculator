@@ -367,3 +367,13 @@ ul {
     padding: 1rem 2rem;
   }
 }
+.size-adjust {
+  width: 100%;
+}
+
+/* Media query for screens wider than 768px */
+@media screen and (min-width: 768px) {
+  .size-adjust {
+    width: 70%;
+  }
+}

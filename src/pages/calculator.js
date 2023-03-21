@@ -199,7 +199,7 @@ console.log("moon : "+ moonTitle);
         <main className="page">
 
 
-        <MDBContainer fluid style={{width:"70%" ,marginTop:"6%"}}>
+        <MDBContainer fluid style={{marginTop:"6%"}} className="size-adjust">
 
             <MDBCard className='text-black m-5' style={{borderRadius: '25px'}}>
                 <MDBCardHeader>
