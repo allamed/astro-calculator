@@ -16,10 +16,9 @@ const Landing = () => {
         {/* info */}
         <div className="info">
           <h1>
-            Horoscope <span> Lunaire</span>
+            <span> Découvrez </span>votre<span> lune </span> noire
           </h1>
           <p>
-            Bienvenue sur notre site consacré à l'astrologie et à l'étude de la Lune Noire.
             Vous avez peut-être entendu parler de la Lune Noire et de son influence sur notre vie, mais savez-vous réellement de quoi il s'agit ?
           </p>
 
