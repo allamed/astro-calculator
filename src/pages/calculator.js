@@ -209,13 +209,13 @@ console.log("moon : "+ moonTitle);
                 </MDBCardHeader>
                 <MDBCardBody>
                     <MDBRow >
-                        <MDBCol md='10' lg='6' style={{marginTop:"4%"}} >
+                        <MDBCol md='10' lg='6' style={{marginTop:"1%"}} >
                             <Form onSubmit={handleSubmit} >
 
 
                                 <MDBRow>
 
-                                    <MDBCol md='6'>
+                                    <MDBCol md='6'style={{marginTop:"6%"}}>
 
                                             {/*<Form.Label style={{marginRight:"5%"}}>Jour </Form.Label>*/}
 
@@ -230,7 +230,7 @@ console.log("moon : "+ moonTitle);
 
                                     </MDBCol>
 
-                                    <MDBCol md='6' >
+                                    <MDBCol md='6' style={{marginTop:"6%"}}>
 
                                             {/*<Form.Label style={{marginRight:"5%"}}>Mois</Form.Label>*/}
                                             <Form.Control as="select" value={mois} onChange={(event) => setMois(event.target.value)}  >
@@ -246,8 +246,8 @@ console.log("moon : "+ moonTitle);
                                 </MDBRow>
 
 
-                                <MDBRow style={{marginTop:"6%"}}>
-                                    <MDBCol md='6'>
+                                <MDBRow >
+                                    <MDBCol md='6' style={{marginTop:"6%"}}>
 
                                             {/*<Form.Label style={{marginRight:"5%"}}>Année</Form.Label>*/}
                                             <Form.Control as="select" value={annee} onChange={(event) => setAnnee(event.target.value)} >
@@ -258,7 +258,7 @@ console.log("moon : "+ moonTitle);
                                             </Form.Control>
 
                                     </MDBCol>
-                                    <MDBCol md='6'>
+                                    <MDBCol md='6' style={{marginTop:"6%"}}>
 
 
                                            {/* <Form.Label style={{marginRight:"5%"}}>Heure</Form.Label>*/}
@@ -275,8 +275,8 @@ console.log("moon : "+ moonTitle);
 
 
                                 </MDBRow>
-                    <MDBRow style={{marginTop:"6%"}}>
-                                <MDBCol md='6' s>
+                    <MDBRow >
+                                <MDBCol md='6' style={{marginTop:"6%"}}>
 
                                         {/*<MDBIcon fas icon="key me-3" size='lg'/>*/}
                                         {/* <Form.Label style={{marginRight:"5%"}}>Minute</Form.Label>*/}
@@ -289,7 +289,7 @@ console.log("moon : "+ moonTitle);
 
                                 </MDBCol>
 
-                                <MDBCol md='6' >
+                                <MDBCol md='6' style={{marginTop:"6%"}}>
 
                                     {/*<MDBIcon fas icon="key me-3" size='lg'/>*/}
                                     {/*<Form.Label style={{marginRight:"5%"}}>Ville</Form.Label>*/}
