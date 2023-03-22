@@ -15,6 +15,7 @@ import {
 } from 'mdb-react-ui-kit';
 import "../index.css";
 import React from "react";
+import Footer from "./footer";
 
 const Result = ({moonTitle, moonContent, houseTitle, houseContent, houseImg, moonImg}) => {
 
@@ -37,7 +38,8 @@ const Result = ({moonTitle, moonContent, houseTitle, houseContent, houseImg, moo
 
                     <MDBCardBody>
                         <MDBTypography style={{width:"100%"}} >
-                            <p >The Moon is the mistress of all liquid nature and rules the heights and tides of the heavenly bodies. The Moon also governs the domestic life, the home, and the emotions, and its influence is felt strongly in the fourth house of the horoscope.</p>
+                            <p >La Lune est la maîtresse de toute la nature liquide et régit les hauteurs et les marées des corps célestes. La Lune régit également la vie domestique, le foyer et les émotions, et son influence se fait fortement sentir dans la quatrième maison de l'horoscope.
+                            </p>
                             <footer className='blockquote-footer'>
                                 Linda Goodman
                             </footer>
@@ -93,41 +95,7 @@ const Result = ({moonTitle, moonContent, houseTitle, houseContent, houseImg, moo
 
 
         </MDBCardGroup>
-            <MDBFooter className='bg-dark text-center text-white' style={{marginTop:"5%"}}>
-                <MDBContainer className='p-4 pb-0'>
-                    <section className='mb-4'>
-                        <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
-                            <MDBIcon fab icon='facebook-f' />
-                        </MDBBtn>
-
-                        <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
-                            <MDBIcon fab icon='twitter' />
-                        </MDBBtn>
-
-                        <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
-                            <MDBIcon fab icon='google' />
-                        </MDBBtn>
-                        <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
-                            <MDBIcon fab icon='instagram' />
-                        </MDBBtn>
-
-                        <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
-                            <MDBIcon fab icon='linkedin-in' />
-                        </MDBBtn>
-
-                        <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
-                            <MDBIcon fab icon='github' />
-                        </MDBBtn>
-                    </section>
-                </MDBContainer>
-
-                <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
-                    © 2023 Copyright:
-                    <a className='text-white' href='https://mdbootstrap.com/'>
-                        LuneNoire
-                    </a>
-                </div>
-            </MDBFooter>
+        <Footer/>
         </div>
     );
 };
