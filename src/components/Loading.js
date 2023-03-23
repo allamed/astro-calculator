@@ -13,7 +13,7 @@ import launch from "../assets/images/launch.svg";
 import React from "react";
 
 const Loading = ({ center }) => {
-  return <div className={center ? 'loading loading-center' : 'loading'}></div>;
+  return <div className={'loading'} style={{maxHeight:"40px", maxWidth:"40px", marginLeft:"10%"}}></div>;
 };
 export default Loading;
 

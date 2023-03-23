@@ -1,13 +1,12 @@
 
 import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import Row from 'react-bootstrap/Row';
-import {Col} from "react-bootstrap";
+
+
 
 import "../index.css";
 import launch from "../assets/images/launch.svg";
+import wait from "../assets/images/undraw_season_change_f99v.svg";
 import {
     MDBBtn,
     MDBContainer,
@@ -29,6 +28,12 @@ import Loading from "../components/Loading";
 import {Wrapper} from "./landing";
 import Result from "../components/result";
 import Footer from "../components/footer";
+import ProjectInfo from "../components/ProjectInfo";
+import {GoLocation} from "react-icons/go";
+import {GrMapLocation} from "react-icons/gr";
+import {BiTimeFive } from "react-icons/bi";
+import {BsCalendarDate, BsMap } from "react-icons/bs";
+
 
 function Calculator() {
     const [jour, setJour] = useState('');
@@ -45,6 +50,8 @@ function Calculator() {
     const [resultReady, setResultReady]=useState(false);
     const [moonImg, setMoonImg]=useState("");
     const [houseImg, setHouseImg]=useState("");
+    const [state, setState]=useState("");
+    const [coord, setCoord]=useState("");
 
 
 
@@ -76,6 +83,7 @@ function Calculator() {
     let country="Morocco";
 
 
+
     // get coordinates
     const options = {
         method: 'GET',
@@ -100,6 +108,8 @@ function Calculator() {
         console.log("long : " + longitudeDegrees);
         console.log("lat : " + latitudeDegrees);
         console.log("country : " + country);
+        setState(country);
+        setCoord("lattitude : "+latitudeDegrees + " , longitude : "+ longitudeDegrees)
 
     }).catch(function (error) {
         console.error(error);
@@ -107,29 +117,30 @@ function Calculator() {
     });
 
 
-    const link =`https://horoscopes.astro-seek.com/calculate-moon-lunar-sign/?send_calculation=1&narozeni_den=${jour}&narozeni_mesic=${mois}&narozeni_rok=${annee}&narozeni_hodina=${heure}&narozeni_minuta=${minute}&narozeni_city=&narozeni_mesto_hidden=&narozeni_stat_hidden=&narozeni_podstat_kratky_hidden=&narozeni_podstat_hidden=&narozeni_input_hidden=&narozeni_podstat2_kratky_hidden=&narozeni_podstat3_kratky_hidden=&narozeni_sirka_stupne=${latitudeDegrees}&narozeni_sirka_minuty=14&narozeni_sirka_smer=0&narozeni_delka_stupne=${longitudeDegrees}&narozeni_delka_minuty=21&narozeni_delka_smer=1&narozeni_timezone_form=auto&narozeni_timezone_dst_form=auto`
-        https://horoscopes.astro-seek.com/calculate-moon-lunar-sign/?send_calculation=1&narozeni_den=14&narozeni_mesic=8&                    narozeni_rok=1970&narozeni_hodina=17&narozeni_minuta=00&narozeni_city=                 &narozeni_mesto_hidden=&narozeni_stat_hidden=&narozeni_podstat_kratky_hidden=&narozeni_podstat_hidden=&narozeni_input_hidden=&narozeni_podstat2_kratky_hidden=&narozeni_podstat3_kratky_hidden=&narozeni_sirka_stupne=6&                                     narozeni_sirka_minuty=8&narozeni_sirka_smer=0&narozeni_delka_stupne=1&narozeni_delka_minuty=13&narozeni_delka_smer=0&narozeni_timezone_form=auto&narozeni_timezone_dst_form=auto
-/*
-        `https://horoscopes.astro-seek.com/calculate-moon-lunar-sign/?send_calculation=1&narozeni_den=${jour}&narozeni_mesic=${mois}&narozeni_rok=${annee}&narozeni_hodina=${heure}&narozeni_minuta=${minute}&narozeni_city=${ville.charAt(0).toUpperCase() + ville.slice(1)}%2C+${country.charAt(0).toUpperCase() + country.slice(1)}&narozeni_mesto_hidden=${ville.charAt(0).toUpperCase() + ville.slice(1)}&narozeni_stat_hidden=MA&narozeni_podstat_kratky_hidden=&narozeni_podstat_hidden=${ville.charAt(0).toUpperCase() + ville.slice(1)}&narozeni_input_hidden=&narozeni_podstat2_kratky_hidden=&narozeni_podstat3_kratky_hidden=&narozeni_sirka_stupne=${latitudeDegrees}&narozeni_sirka_minuty=14&narozeni_sirka_smer=0&narozeni_delka_stupne=${longitudeDegrees}&narozeni_delka_minuty=21&narozeni_delka_smer=1&narozeni_timezone_form=auto&narozeni_timezone_dst_form=auto`
-      *//*  https://horoscopes.astro-seek.com/calculate-moon-lunar-sign/?send_calculation=1&narozeni_den=17&narozeni_mesic=7&narozeni_rok=1946&narozeni_hodina=17&                               narozeni_minuta=18&narozeni_city=Casablanca%2C+Morocco&narozeni_mesto_hidden=Casablanca&narozeni_stat_hidden=MA&narozeni_podstat_kratky_hidden=&narozeni_podstat_hidden=Casablanca-Settat&narozeni_input_hidden=&narozeni_podstat2_kratky_hidden=&narozeni_podstat3_kratky_hidden=&narozeni_sirka_stupne=33&narozeni_sirka_minuty=35&narozeni_sirka_smer=0&narozeni_delka_stupne=7&narozeni_delka_minuty=37&narozeni_delka_smer=1&narozeni_timezone_form=auto&narozeni_timezone_dst_form=auto
-      */console.log(link)
+    const link =`https://horoscopes.astro-seek.com/calculate-birth-chart-horoscope-online/?send_calculation=1&narozeni_den=${jour}&narozeni_mesic=${mois}&narozeni_rok=${annee}&narozeni_hodina=${heure}&narozeni_minuta=${minute}&narozeni_city=&narozeni_mesto_hidden=&narozeni_stat_hidden=&narozeni_podstat_kratky_hidden=&narozeni_podstat_hidden=&narozeni_input_hidden=&narozeni_podstat2_kratky_hidden=&narozeni_podstat3_kratky_hidden=&narozeni_sirka_stupne=${latitudeDegrees}&narozeni_sirka_minuty=14&narozeni_sirka_smer=0&narozeni_delka_stupne=${longitudeDegrees}&narozeni_delka_minuty=21&narozeni_delka_smer=1&narozeni_timezone_form=auto&narozeni_timezone_dst_form=auto`
+
+        console.log(link)
         const dataLink = {
         link:link
 
     };
-    const promise = axios.post("https://astroseek-api.onrender.com/astroseek-calculator"/*"/api"*/ ,dataLink )
+    const promise = axios.post("https://astroseek-api.onrender.com/astroseek-bith-chart-calculator/v2"/*"/api"*/ ,dataLink )
         setIsLoading(true);
 // Handle the pending, fulfilled, and rejected cases
     promise.then((response) => {
         setIsLoading(false);
         const data = response.data;
-        console.log(data);
-        setMoonTitle (data["moon-sign-title"]);
-        setMoonContent(data["moon-sign-content"]);
-        setHouseTitle(data["moon-in-the-house-title"]);
-        setHouseContent(data["moon-in-the-house-content"]);
-        setHouseImg(data["moon-in-the-house-image"]);
-        setMoonImg(data["moon-sign-image"]);
+
+
+
+         setMoonTitle (data["lilith-zodiac-title"]);
+        setMoonContent(data["lilith-zodiac-content"]);
+        setHouseContent(data["lilith-house-content"]);
+         setHouseTitle(data["lilith-house-title"]);
+/*
+         setHouseImg(data["moon-in-the-house-image"]);
+         setMoonImg(data["moon-sign-image"]);*/
+        //setMoonContent(data["lilith-text"]);
         setResultReady(true);
 
     }).catch((error) => {
@@ -146,15 +157,44 @@ console.log("moon : "+ moonTitle);
 
     if (isLoading) {
         return (
-    <main>
-        <MDBContainer fluid style={{width:"70%" ,marginTop:"6%", marginBottom:"30%"}}>
+    <main className="page">
+        <MDBContainer fluid style={{marginTop:"6%"}} className="size-adjust2">
 
+            <MDBCard className='text-black m-5' style={{borderRadius: '25px'}}>
+                <MDBCardHeader style={{ marginTop:"2%", marginBottom:"2%", display:"flex"}}>
 
-                <Loading />
+                    <h4 style={{marginLeft:"10%", color:"#341f97"}}>
+                        Résultat dans quelques secondes ...
+                    </h4>
+                    <Loading />
 
+                </MDBCardHeader>
+                <MDBCardBody>
+                    <MDBRow  >
+                        <MDBCol md='10' lg='6' style={{ marginBottom:"1%"}} >
+                            <div className="content-center" style={{marginLeft:"15%"}}>
+                                <ProjectInfo icon={<BsCalendarDate />} text={jour + "/" + mois+"/"+annee} />
+                                <ProjectInfo icon={<BiTimeFive />} text={heure + " Heure , "+minute +" Minutes"} />
+                                <ProjectInfo icon={<GoLocation />} text={`${ville} , ${state} ` }  />
+                                <ProjectInfo icon={<BsMap />} text={coord} />
+                            </div>
+
+                        </MDBCol>
+
+                        <MDBCol md='10' lg='6' className='order-1 order-lg-2 d-flex align-items-center'>
+                            <MDBCardImage src={wait} fluid style={{maxWidth:"70%"}}/>
+
+                        </MDBCol>
+
+                    </MDBRow>
+                </MDBCardBody>
+            </MDBCard>
 
         </MDBContainer >
-        <Footer/>
+        <div style={{flexShrink:"0", marginTop:"17%", marginBottom:"0"}}>
+            <Footer />
+        </div>
+
     </main>);
 
 
@@ -164,6 +204,7 @@ console.log("moon : "+ moonTitle);
 
 
         <main className="page">
+
 
 
         <MDBContainer fluid style={{marginTop:"6%"}} className="size-adjust">

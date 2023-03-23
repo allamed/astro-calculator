@@ -356,6 +356,24 @@ ul {
   touch-action: manipulation;
 }
 
+.content-center {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 0.5rem;
+@media (min-width: 576px) {
+  grid-template-columns: 1fr 1fr;
+}
+@media (min-width: 992px) {
+  grid-template-columns: 1fr;
+}
+@media (min-width: 1120px) {
+  grid-template-columns: 1fr 1fr;
+}
+}
+
+
+
+
 .button-81:hover {
   background-color: #6063fa;
   color: #fff;
@@ -375,5 +393,15 @@ ul {
 @media screen and (min-width: 768px) {
   .size-adjust {
     width: 70%;
+  }
+}
+.size-adjust2 {
+  width: 100%;
+}
+
+/* Media query for screens wider than 768px */
+@media screen and (min-width: 768px) {
+  .size-adjust2 {
+    width: 50%;
   }
 }
