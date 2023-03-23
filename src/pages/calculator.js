@@ -52,6 +52,9 @@ function Calculator() {
     const [houseImg, setHouseImg]=useState("");
     const [state, setState]=useState("");
     const [coord, setCoord]=useState("");
+    const [lat, setLat]=useState(6);
+    const[long, setLong]=useState(34);
+
 
 
 
@@ -102,56 +105,64 @@ function Calculator() {
     axios.request(options).then(function (response) {
         const data = response.data[0];
         console.log(data)
-        longitudeDegrees=Math.floor(Math.abs(data.lon));
-        latitudeDegrees =Math.floor(Math.abs(data.lat));
+        const longi=Math.floor(Math.abs(data.lon));
+        const longiMinutes = (Math.abs(data.lon) - longi) * 60;
+        const lati =Math.floor(Math.abs(data.lat));
+        const latiMinutes = (Math.abs(data.lat) - lati) * 60;
+        let direction=0;
+        if (data.lon<0) direction=1;
+        setLong(longitudeDegrees);
+        setLat(latitudeDegrees);
         country = data.display_name.split(", ").pop();
-        console.log("long : " + longitudeDegrees);
-        console.log("lat : " + latitudeDegrees);
+        console.log("long : " + longi);
+        console.log("lat : " + lati);
         console.log("country : " + country);
         setState(country);
-        setCoord("lattitude : "+latitudeDegrees + " , longitude : "+ longitudeDegrees)
+        setCoord("lattitude : "+lati + " , longitude : "+ longi);
+
+
+        const link =`https://horoscopes.astro-seek.com/calculate-birth-chart-horoscope-online/?send_calculation=1&narozeni_den=${jour}&narozeni_mesic=${mois}&narozeni_rok=${annee}&narozeni_hodina=${heure}&narozeni_minuta=${minute}&narozeni_city=&narozeni_mesto_hidden=&narozeni_stat_hidden=&narozeni_podstat_kratky_hidden=&narozeni_podstat_hidden=&narozeni_input_hidden=&narozeni_podstat2_kratky_hidden=&narozeni_podstat3_kratky_hidden=&narozeni_sirka_stupne=${lati}&narozeni_sirka_minuty=${latiMinutes}&narozeni_sirka_smer=0&narozeni_delka_stupne=${longi}&narozeni_delka_minuty=${longiMinutes}&narozeni_delka_smer=${direction}&narozeni_timezone_form=auto&narozeni_timezone_dst_form=auto`
+
+        console.log(link)
+        const dataLink = {
+            link:link
+
+        };
+        const promise = axios.post("https://astroseek-api.onrender.com/astroseek-bith-chart-calculator/v2"/*"/api"*/ ,dataLink )
+        setIsLoading(true);
+// Handle the pending, fulfilled, and rejected cases
+        promise.then((response) => {
+            setIsLoading(false);
+            const data = response.data;
+
+
+
+            setMoonTitle (data["lilith-zodiac-title"]);
+            setMoonContent(data["lilith-zodiac-content"]);
+            setHouseContent(data["lilith-house-content"]);
+            setHouseTitle(data["lilith-house-title"]);
+            /*
+                     setHouseImg(data["moon-in-the-house-image"]);
+                     setMoonImg(data["moon-sign-image"]);*/
+            //setMoonContent(data["lilith-text"]);
+            setResultReady(true);
+
+        }).catch((error) => {
+            setIsLoading(false);
+            toast.error("il y a eu une erreur du serveur");
+            console.error('POST request failed:', error);
+        }).finally(() => {
+            setIsLoading(false);
+        });
 
     }).catch(function (error) {
         console.error(error);
         //toast.error("il y a eu une erreur du serveur");
-    });
-
-
-    const link =`https://horoscopes.astro-seek.com/calculate-birth-chart-horoscope-online/?send_calculation=1&narozeni_den=${jour}&narozeni_mesic=${mois}&narozeni_rok=${annee}&narozeni_hodina=${heure}&narozeni_minuta=${minute}&narozeni_city=&narozeni_mesto_hidden=&narozeni_stat_hidden=&narozeni_podstat_kratky_hidden=&narozeni_podstat_hidden=&narozeni_input_hidden=&narozeni_podstat2_kratky_hidden=&narozeni_podstat3_kratky_hidden=&narozeni_sirka_stupne=${latitudeDegrees}&narozeni_sirka_minuty=14&narozeni_sirka_smer=0&narozeni_delka_stupne=${longitudeDegrees}&narozeni_delka_minuty=21&narozeni_delka_smer=1&narozeni_timezone_form=auto&narozeni_timezone_dst_form=auto`
-
-        console.log(link)
-        const dataLink = {
-        link:link
-
-    };
-    const promise = axios.post("https://astroseek-api.onrender.com/astroseek-bith-chart-calculator/v2"/*"/api"*/ ,dataLink )
-        setIsLoading(true);
-// Handle the pending, fulfilled, and rejected cases
-    promise.then((response) => {
-        setIsLoading(false);
-        const data = response.data;
+    })
 
 
 
-         setMoonTitle (data["lilith-zodiac-title"]);
-        setMoonContent(data["lilith-zodiac-content"]);
-        setHouseContent(data["lilith-house-content"]);
-         setHouseTitle(data["lilith-house-title"]);
-/*
-         setHouseImg(data["moon-in-the-house-image"]);
-         setMoonImg(data["moon-sign-image"]);*/
-        //setMoonContent(data["lilith-text"]);
-        setResultReady(true);
-
-    }).catch((error) => {
-        setIsLoading(false);
-        toast.error("il y a eu une erreur du serveur");
-        console.error('POST request failed:', error);
-    }).finally(() => {
-        setIsLoading(false);
-    });
-
-console.log("moon : "+ moonTitle);
+//console.log("moon : "+ moonTitle);
 
     };
 
