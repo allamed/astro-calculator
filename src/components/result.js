@@ -36,7 +36,7 @@ const Result = ({moonTitle, moonContent, houseTitle, houseContent, houseImg, moo
 
         <MDBCardGroup >
             <MDBCard style={{marginLeft:"4%", marginRight:"4%", marginTop:"1%"}}>
-                <MDBCardImage src={moon} alt='...' position='top' />
+                {/*<MDBCardImage src={moon} alt='...' position='top' />*/}
 
                 <MDBCardBody>
                     {/*<MDBRow style={{marginBottom:"1%"}}>
@@ -57,7 +57,7 @@ const Result = ({moonTitle, moonContent, houseTitle, houseContent, houseImg, moo
             </MDBCard>
 
             <MDBCard style={{marginLeft:"1%", marginRight:"4%", marginTop:"1%"}}>
-                <MDBCardImage src={ house} alt='...' position='top' style={{width:"99%"}}/>
+                {/*<MDBCardImage src={ house} alt='...' position='top' style={{width:"99%"}}/>*/}
                 <MDBCardBody>
                    {/* <MDBRow style={{marginBottom:"1%"}}>
                         <MDBCol md="2">
