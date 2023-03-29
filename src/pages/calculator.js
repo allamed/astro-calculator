@@ -128,7 +128,7 @@ function Calculator() {
             link:link
 
         };
-        const promise = axios.post("https://astroseek-api.onrender.com/astroseek-bith-chart-calculator/v2"/*"/api"*/ ,dataLink )
+      /*  const promise = axios.post("https://astroseek-api.onrender.com/astroseek-bith-chart-calculator/v2"/!*"/api"*!/ ,dataLink )
         setIsLoading(true);
 // Handle the pending, fulfilled, and rejected cases
         promise.then((response) => {
@@ -141,9 +141,9 @@ function Calculator() {
             setMoonContent(data["lilith-zodiac-content"]);
             setHouseContent(data["lilith-house-content"]);
             setHouseTitle(data["lilith-house-title"]);
-            /*
+            /!*
                      setHouseImg(data["moon-in-the-house-image"]);
-                     setMoonImg(data["moon-sign-image"]);*/
+                     setMoonImg(data["moon-sign-image"]);*!/
             //setMoonContent(data["lilith-text"]);
             setResultReady(true);
 
@@ -153,6 +153,73 @@ function Calculator() {
             console.error('POST request failed:', error);
         }).finally(() => {
             setIsLoading(false);
+        });*/
+
+
+
+        //new code
+        const timeoutPromise = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                reject(new Error('Timeout'));
+            }, 10000);
+        });
+
+        const postPromise = axios.post("https://astroseek-api.onrender.com/astroseek-bith-chart-calculator/v2"/*"/api"*/, dataLink);
+
+        const promise = Promise.race([timeoutPromise, postPromise]);
+
+        setIsLoading(true);
+
+        promise.then((response) => {
+            setIsLoading(false);
+            //use data
+
+            const data = response.data;
+
+
+
+            setMoonTitle (data["lilith-zodiac-title"]);
+            setMoonContent(data["lilith-zodiac-content"]);
+            setHouseContent(data["lilith-house-content"]);
+            setHouseTitle(data["lilith-house-title"]);
+
+            /*setHouseImg(data["moon-in-the-house-image"]);
+            setMoonImg(data["moon-sign-image"]);*/
+            //setMoonContent(data["lilith-text"]);
+            setResultReady(true);
+        }).catch((error) => {
+
+            if (error.message === 'Timeout') {
+                console.log("La requête a pris trop de temps, veuillez réessayer.");
+                // renvoyer la requête POST
+                const newPromise = axios.post("https://astroseek-api.onrender.com/astroseek-bith-chart-calculator/v2"/*"/api"*/, dataLink);
+                newPromise.then((response) => {
+                    // traitement des données
+                    setIsLoading(false);
+                    const data = response.data;
+
+
+
+                    setMoonTitle (data["lilith-zodiac-title"]);
+                    setMoonContent(data["lilith-zodiac-content"]);
+                    setHouseContent(data["lilith-house-content"]);
+                    setHouseTitle(data["lilith-house-title"]);
+                    /*
+                    setHouseImg(data["moon-in-the-house-image"]);
+                    setMoonImg(data["moon-sign-image"]);*/
+                    //setMoonContent(data["lilith-text"]);
+                    setResultReady(true);
+                }).catch((error) => {
+                    // gestion des erreurs
+                    setIsLoading(false);
+                    toast.error("il y a eu une erreur du serveur");
+                    console.error('POST request failed:', error);
+                });
+            } else {
+                setIsLoading(false);
+                toast.error("Il y a eu une erreur du serveur.");
+                console.error('POST request failed:', error);
+            }
         });
 
     }).catch(function (error) {
