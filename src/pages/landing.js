@@ -1,4 +1,4 @@
-import main from "../assets/images/moon.svg";
+import main from "../assets/images/myster2.png";
 import styled from "styled-components";
 //import { Logo } from "../components";
 import { Link } from "react-router-dom";
@@ -26,7 +26,7 @@ const Landing = () => {
             Découvrir !
           </Link>
         </div>
-        <img src={main} alt="job hunt" className="img main-img" />
+        <img src={main} alt="job hunt" className="img main-img" style={{width:"60%"}} />
       </div>
       <Footer/>
     </Wrapper>
@@ -48,7 +48,9 @@ export const Wrapper = styled.main`
     margin-top: -3rem;
   }
   h1 {
-    font-weight: 700;
+    font-weight: 800;
+    
+    font-family: quintessential;
     span {
       color: var(--primary-500);
     }

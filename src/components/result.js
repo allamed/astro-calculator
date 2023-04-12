@@ -20,7 +20,9 @@ import Footer from "./footer";
 const Result = ({moonTitle, moonContent, houseTitle, houseContent, houseImg, moonImg}) => {
 
     return (
-        <div>
+        <>
+
+        <div className="container page" style={{marginTop:"5%"}} >
             {/*<MDBCard style={{marginTop:"1%", marginLeft:"4%", marginRight:"5%", backgroundColor:"#f1f2f6"}}>
                 <MDBCardHeader>Quote</MDBCardHeader>
                 <MDBCardBody>
@@ -34,20 +36,20 @@ const Result = ({moonTitle, moonContent, houseTitle, houseContent, houseImg, moo
             </MDBCard>*/}
 
 
-        <MDBCardGroup style={{marginBottom:"26%"}} >
-            <MDBCard style={{marginLeft:"4%", marginRight:"4%", marginTop:"1%"}}>
+        <MDBCardGroup style={{marginBottom:"26%" }} >
+            <MDBCard style={{ backgroundColor:"#2A3E4E", marginRight:"3%"}}>
                 {/*<MDBCardImage src={moon} alt='...' position='top' />*/}
 
-                <MDBCardBody>
+                <MDBCardBody >
                     {/*<MDBRow style={{marginBottom:"1%"}}>
                         <MDBCol md="2">
                             <img src={moonImg} alt=""/>
                         </MDBCol>
                         <MDBCol md="10" style={{marginTop:"3%"}}>*/}
-                            <MDBCardTitle style={{color:"#5f27cd", fontSize:"x-large"}}>Votre lune noire est {moonTitle.slice(6)}</MDBCardTitle>
+                            <MDBCardTitle style={{color:"#f6ccb6", fontSize:"x-large"}}>Votre lune noire est {moonTitle.slice(6)}</MDBCardTitle>
                         {/*</MDBCol>
                     </MDBRow>*/}
-                    <MDBCardText className="text-justify">
+                    <MDBCardText className="text-justify" style={{color:"white"}}>
                         {moonContent}
                     </MDBCardText>
                 </MDBCardBody>
@@ -56,7 +58,7 @@ const Result = ({moonTitle, moonContent, houseTitle, houseContent, houseImg, moo
                 </MDBCardFooter>
             </MDBCard>
 
-            <MDBCard style={{marginLeft:"1%", marginRight:"4%", marginTop:"1%"}}>
+            <MDBCard style={{ backgroundColor:"#2A3E4E", marginRight:"3%"}}>
                 {/*<MDBCardImage src={ house} alt='...' position='top' style={{width:"99%"}}/>*/}
                 <MDBCardBody>
                    {/* <MDBRow style={{marginBottom:"1%"}}>
@@ -64,13 +66,13 @@ const Result = ({moonTitle, moonContent, houseTitle, houseContent, houseImg, moo
                             <img src={houseImg} alt=""/>
                         </MDBCol>
                         <MDBCol md="10" style={{marginTop:"3%"}}>*/}
-                            <MDBCardTitle style={{color:"#5f27cd", fontSize:"x-large"}}>Votre lune noire est {houseTitle.slice(6)}</MDBCardTitle>
+                            <MDBCardTitle style={{color:"#f6ccb6", fontSize:"x-large"}}>Votre lune noire est {houseTitle.slice(6)}</MDBCardTitle>
                         {/*</MDBCol>
                     </MDBRow>*/}
 
 
 
-                    <MDBCardText>
+                    <MDBCardText style={{color:"white"}}>
                         {houseContent}
                     </MDBCardText>
                 </MDBCardBody>
@@ -81,8 +83,15 @@ const Result = ({moonTitle, moonContent, houseTitle, houseContent, houseImg, moo
 
 
         </MDBCardGroup>
-        <Footer/>
         </div>
+            <Footer/>
+
+
+
+
+
+
+        </>
     );
 };
 export default Result;

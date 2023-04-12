@@ -8,6 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "./index.css";
 import Result from "./components/result";
 
+
 function App() {
   return (
       <BrowserRouter>

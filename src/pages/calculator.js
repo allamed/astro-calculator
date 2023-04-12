@@ -5,8 +5,8 @@ import Form from 'react-bootstrap/Form';
 
 
 import "../index.css";
-import launch from "../assets/images/launch.svg";
-import wait from "../assets/images/undraw_season_change_f99v.svg";
+import launch from "../assets/images/mysterePng.png";
+import wait from "../assets/images/wait.svg";
 import {
     MDBBtn,
     MDBContainer,
@@ -238,10 +238,10 @@ function Calculator() {
     <main className="page">
         <MDBContainer fluid style={{marginTop:"6%"}} className="size-adjust2">
 
-            <MDBCard className='text-black m-5' style={{borderRadius: '25px'}}>
+            <MDBCard className=' m-5' style={{borderRadius: '25px', backgroundColor:"#2A3E4E"}}>
                 <MDBCardHeader style={{ marginTop:"2%", marginBottom:"2%", display:"flex"}}>
 
-                    <h4 style={{marginLeft:"10%", color:"#341f97"}}>
+                    <h4 style={{marginLeft:"10%", color:"#BFB0AE"}}>
                         Résultat dans quelques secondes ...
                     </h4>
                     <Loading />
@@ -287,15 +287,18 @@ function Calculator() {
 
         <MDBContainer fluid style={{marginTop:"6%"}} className="size-adjust">
 
-            <MDBCard className='text-black m-5' style={{borderRadius: '25px'}}>
+            <MDBCard className='text-black m-5' style={{borderRadius: '25px', backgroundColor:"#2A3E4E"}}>
                 <MDBCardHeader>
-                <MDBCardTitle style={{marginLeft:"10%", marginTop:"2%", marginBottom:"2%"}}>
+                <MDBCardTitle style={{marginLeft:"10%", marginTop:"2%", marginBottom:"2%", color:"#F6CCB6"}}>
                     Entrer vos données de naissance!
                 </MDBCardTitle>
                 </MDBCardHeader>
                 <MDBCardBody>
                     <MDBRow >
-                        <MDBCol md='10' lg='6' style={{marginTop:"1%"}} >
+                        <MDBCol md='4' lg='6' className='order-1 order-lg-2 d-flex align-items-center'>
+                            <MDBCardImage src={launch} fluid style={{width:"60%", marginLeft:"20%"}}/>
+                        </MDBCol>
+                        <MDBCol md='8' lg='6' style={{marginTop:"1%"}} >
                             <Form onSubmit={handleSubmit} >
 
 
@@ -305,7 +308,7 @@ function Calculator() {
 
                                             {/*<Form.Label style={{marginRight:"5%"}}>Jour </Form.Label>*/}
 
-                                            <Form.Control as="select" value={jour} onChange={(event) => setJour(event.target.value)}  placeholder="jour">
+                                            <Form.Control as="select" value={jour} onChange={(event) => setJour(event.target.value)}  placeholder="jour" style={{backgroundColor:"#BFB0AE"}}>
                                                 <option value="" key={-1} style={{ color: "gray" }} disabled>
                                                     jour
                                                 </option>
@@ -319,7 +322,7 @@ function Calculator() {
                                     <MDBCol md='6' style={{marginTop:"6%"}}>
 
                                             {/*<Form.Label style={{marginRight:"5%"}}>Mois</Form.Label>*/}
-                                            <Form.Control as="select" value={mois} onChange={(event) => setMois(event.target.value)}  >
+                                            <Form.Control as="select" value={mois} onChange={(event) => setMois(event.target.value)} style={{backgroundColor:"#BFB0AE"}}  >
                                                 <option value="" key={-1} style={{ color: "gray" }} disabled>
                                                     mois
                                                 </option>
@@ -336,7 +339,7 @@ function Calculator() {
                                     <MDBCol md='6' style={{marginTop:"6%"}}>
 
                                             {/*<Form.Label style={{marginRight:"5%"}}>Année</Form.Label>*/}
-                                            <Form.Control as="select" value={annee} onChange={(event) => setAnnee(event.target.value)} >
+                                            <Form.Control as="select" value={annee} onChange={(event) => setAnnee(event.target.value)} style={{backgroundColor:"#BFB0AE"}}>
                                                 <option value="" key={-1} style={{ color: "gray" }} disabled>
                                                     année
                                                 </option>
@@ -348,7 +351,7 @@ function Calculator() {
 
 
                                            {/* <Form.Label style={{marginRight:"5%"}}>Heure</Form.Label>*/}
-                                            <Form.Control as="select" value={heure} onChange={(event) => setHeure(event.target.value)} >
+                                            <Form.Control as="select" value={heure} onChange={(event) => setHeure(event.target.value)} style={{backgroundColor:"#BFB0AE"}}>
                                                 <option value="" key={-1} style={{ color: "gray" }} disabled>
                                                     heure
                                                 </option>
@@ -366,7 +369,7 @@ function Calculator() {
 
                                         {/*<MDBIcon fas icon="key me-3" size='lg'/>*/}
                                         {/* <Form.Label style={{marginRight:"5%"}}>Minute</Form.Label>*/}
-                                        <Form.Control as="select" value={minute} onChange={(event) => setMinute(event.target.value)} >
+                                        <Form.Control as="select" value={minute} onChange={(event) => setMinute(event.target.value)} style={{backgroundColor:"#BFB0AE"}}>
                                             <option value="" key={-1} style={{ color: "gray" }} disabled>
                                                 minute
                                             </option>
@@ -379,7 +382,7 @@ function Calculator() {
 
                                     {/*<MDBIcon fas icon="key me-3" size='lg'/>*/}
                                     {/*<Form.Label style={{marginRight:"5%"}}>Ville</Form.Label>*/}
-                                    <Form.Control type="text" value={ville} onChange={(event) => setVille(event.target.value)}  placeholder="Ville de naissance">
+                                    <Form.Control type="text" value={ville} onChange={(event) => setVille(event.target.value)}  placeholder="Ville de naissance" style={{backgroundColor:"#BFB0AE"}}>
 
                                     </Form.Control>
                                 </MDBCol>
@@ -390,9 +393,7 @@ function Calculator() {
 
                         </MDBCol>
 
-                        <MDBCol md='10' lg='6' className='order-1 order-lg-2 d-flex align-items-center'>
-                            <MDBCardImage src={launch} fluid/>
-                        </MDBCol>
+
 
                     </MDBRow>
                 </MDBCardBody>
