@@ -260,7 +260,7 @@ function Calculator() {
                         </MDBCol>
 
                         <MDBCol md='10' lg='6' className='order-1 order-lg-2 d-flex align-items-center'>
-                            <MDBCardImage src={wait} fluid style={{maxWidth:"70%"}}/>
+                            <MDBCardImage src={wait} fluid style={{maxWidth:"70%", marginTop:"5%"}}/>
 
                         </MDBCol>
 
@@ -281,11 +281,11 @@ function Calculator() {
 
 
 
-        <main className="page">
+        <>
 
 
 
-        <MDBContainer fluid style={{marginTop:"6%"}} className="size-adjust">
+
 
             <MDBCard className='text-black m-5' style={{borderRadius: '25px', backgroundColor:"#2A3E4E"}}>
                 <MDBCardHeader>
@@ -388,7 +388,7 @@ function Calculator() {
                                 </MDBCol>
                     </MDBRow>
 
-                            <MDBBtn className='mb-4' size='lg' type="submit" style={{marginTop:"10%", marginLeft:"30%"}}>Dévoiler votre Lune noire</MDBBtn>
+                            <MDBBtn className='mb-4' size='lg' type="submit" style={{marginTop:"10%", marginLeft:"20%"}}>Dévoiler votre Lune noire</MDBBtn>
                                 </Form >
 
                         </MDBCol>
@@ -399,9 +399,9 @@ function Calculator() {
                 </MDBCardBody>
             </MDBCard>
 
-        </MDBContainer >
+
             <Footer/>
-        </main>
+        </>
 
     );
     if (resultReady) return( <Result moonTitle={moonTitle} houseContent={houseContent} houseTitle={houseTitle} moonContent={moonContent} moonImg={moonImg} houseImg={houseImg} />);
