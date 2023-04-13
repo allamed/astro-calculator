@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form';
 
 
 import "../index.css";
-import launch from "../assets/images/mysterePng.png";
+import launch from "../assets/images/myster2.png";
 import wait from "../assets/images/wait.svg";
 import {
     MDBBtn,
