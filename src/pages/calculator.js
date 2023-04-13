@@ -290,7 +290,7 @@ function Calculator() {
             <MDBCard className='text-black m-5' style={{borderRadius: '25px', backgroundColor:"#2A3E4E"}}>
                 <MDBCardHeader>
                 <MDBCardTitle style={{marginLeft:"10%", marginTop:"2%", marginBottom:"2%", color:"#F6CCB6"}}>
-                    Entrer vos données de naissance!
+                    Entrez vos données de naissance!
                 </MDBCardTitle>
                 </MDBCardHeader>
                 <MDBCardBody>
@@ -388,7 +388,7 @@ function Calculator() {
                                 </MDBCol>
                     </MDBRow>
 
-                            <MDBBtn className='mb-4' size='lg' type="submit" style={{marginTop:"10%", marginLeft:"20%"}}>Dévoiler votre Lune noire</MDBBtn>
+                            <MDBBtn className='mb-4' size='lg' type="submit" style={{marginTop:"10%", marginLeft:"20%"}}>Dévoilez votre Lune noire</MDBBtn>
                                 </Form >
 
                         </MDBCol>
