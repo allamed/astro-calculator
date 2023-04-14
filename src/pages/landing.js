@@ -16,10 +16,10 @@ const Landing = () => {
         {/* info */}
         <div className="info">
           <h1>
-            <span> Découvrez </span>votre<span> lune </span> noire
+            <span> Découvrez </span>votre<span> médaillon </span>de Lune noire
           </h1>
           <p>
-            Vous avez peut-être entendu parler de la Lune Noire et de son influence sur notre vie, mais savez-vous réellement de quoi il s'agit ?
+            La Lune noire offre un potentiel inouï de s’ouvrir au Féminin en soi, à le guérir et à le déployer, afin d’incarner son mythe fondateur pour le monde. Êtes-vous prête.s à en savoir plus sur elle et son influence dans votre vie ?
           </p>
 
           <Link to="/calculator" className="btn btn-hero">
