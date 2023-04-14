@@ -25,6 +25,10 @@ const Result = ({moonTitle, moonContent, houseTitle, houseContent, houseImg, moo
         moonTitle = "Votre lune noire est en Taureau : Mémoires de Circé";
         moonContent = "Blessure de possessivité.";
     }
+    if (moonTitle.toUpperCase().includes("BELIER")) {
+        moonTitle = "Votre lune noire est en Bélier : mémoires de Kali";
+        moonContent = "Blessure de possessivité.";
+    }
     if (moonTitle.toUpperCase().includes("GÉMEAUX")) {
         moonTitle = "Votre lune noire est en Gémeaux : Mémoires d’Écho";
         moonContent = "Blessure d’intégration sociale.";
@@ -66,6 +70,9 @@ const Result = ({moonTitle, moonContent, houseTitle, houseContent, houseImg, moo
         moonContent = "Blessure de paranoïa.";
     }
 
+    if (houseTitle.includes("Ie ") || houseTitle.includes("1")) {
+        houseContent = "Interdit d’affirmation de soi.";
+    }
     if (houseTitle.includes("IIe ") || houseTitle.includes("2")) {
         houseContent = "Interdit de valorisation de soi.";
     }
