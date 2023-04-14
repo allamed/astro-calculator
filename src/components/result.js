@@ -25,7 +25,7 @@ const Result = ({moonTitle, moonContent, houseTitle, houseContent, houseImg, moo
         moonTitle = "Votre lune noire est en Taureau : Mémoires de Circé";
         moonContent = "Blessure de possessivité.";
     }
-    if (moonTitle.toUpperCase().includes("BELIER")) {
+    if (moonTitle.toUpperCase().includes("BELIER")|| moonTitle.includes("Bélier")) {
         moonTitle = "Votre lune noire est en Bélier : mémoires de Kali";
         moonContent = "Blessure de possessivité.";
     }
@@ -183,7 +183,7 @@ const Result = ({moonTitle, moonContent, houseTitle, houseContent, houseImg, moo
 
 
 
-        <MDBCardGroup style={{marginBottom:"5%" }} >
+        <MDBCardGroup style={{marginBottom:"1%" }} >
             <MDBCard style={{ backgroundColor:"#2A3E4E", marginRight:"2%"}}>
                 {/*<MDBCardImage src={moon} alt='...' position='top' />*/}
 
