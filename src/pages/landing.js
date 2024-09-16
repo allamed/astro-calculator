@@ -16,11 +16,16 @@ const Landing = () => {
         {/* info */}
         <div className="info">
           <h1>
-            <span> Découvrez </span>votre<span> médaillon </span>de Lune noire
+              Découvrez le visage de l’initiatrice secrète de votre
+              vie: votre Lune Noire natale.
           </h1>
           <p>
-            La Lune noire offre un potentiel inouï de s’ouvrir au Féminin en soi, à le guérir et à le déployer, afin d’incarner son mythe fondateur pour le monde. Êtes-vous prête.s à en savoir plus sur elle et son influence dans votre vie ?
-          </p>
+              La Lune Noire est un portail de rencontre avec le Divin. Elle nous invite à une
+              initiation profonde pour libérer les peurs qui nous coupent de la plus belle rencontre
+              de notre vie. Elle est Déesse Sombre, Féminin Divin sacrifié. Elle est Celle qui nous
+              attend depuis si longtemps et détient, pour chacun.e de nous, des trésors
+              insoupçonnés…
+              Êtes-vous prête.s à découvrir son influence sur votre vie ?          </p>
 
           <Link to="/calculator" className="btn btn-hero">
             Découvrir !
@@ -45,7 +50,7 @@ export const Wrapper = styled.main`
     min-height: calc(100vh - var(--nav-height));
     display: grid;
     align-items: center;
-    margin-top: -3rem;
+    margin-top: -1rem;
   }
   h1 {
     font-weight: 800;
