@@ -42,7 +42,7 @@ const Result = ({ moonTitle, moonContent, houseTitle, houseContent }) => {
     };
 
     const moonSign = moonTitle.split(' ').pop().toUpperCase();
-    const houseNumber = houseTitle.match(/\d+/)[0];
+    const houseNumber = houseTitle.slice(6);
 
     return (
         <>
