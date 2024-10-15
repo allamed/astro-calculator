@@ -93,13 +93,13 @@ const Result = ({ moonTitle, moonContent, houseTitle, houseContent }) => {
 
                     <MDBCard style={{ backgroundColor:"#2A3E4E", marginRight:"3%"}}>
                         <MDBCardBody>
-                            <MDBCardTitle style={{color:"#f6ccb6", fontSize:"x-large"}}>Votre Lune Noire est {houseTitle.slice(6)}</MDBCardTitle>
+                            <MDBCardTitle style={{color:"#f6ccb6", fontSize:"x-large"}}>Votre LUNE NOIRE est en MAISON {houseTitle.slice(6)}</MDBCardTitle>
                             <MDBCardText style={{color:"white"}}>
                                 {getHouseContent(houseNumber)}
                             </MDBCardText>
                         </MDBCardBody>
                         <MDBCardFooter>
-                            <small className='text-muted'>Lune Noire en Maison {houseNumber}</small>
+                            <small className='text-muted'>Lune Noire {houseNumber}</small>
                         </MDBCardFooter>
                     </MDBCard>
                 </MDBCardGroup>
