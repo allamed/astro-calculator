@@ -115,7 +115,7 @@ const Result = ({ moonTitle, moonContent, houseTitle, houseContent }) => {
                                 avec la Déesse Sombre (la Lune Noire) vous traverserez le portail initiatique qui
                                 mène au Divin…
 
-                                <a href="https://mysteresdufeminin.com/boutique/" style={{fontSize:"larger"}}>Découvrez-le ici!</a>
+                                <a href="https://www.amazon.fr/Lieu-Secret-%C3%8Atre-initi%C3%A9e-Noire/dp/B0DK4R6NXB" style={{fontSize:"larger"}}>Découvrez-le ici!</a>
                                 <br/><br/>
 
                                 Si vous l'avez lu, pourriez-vous nous offrir quelques instants pour nous partager
